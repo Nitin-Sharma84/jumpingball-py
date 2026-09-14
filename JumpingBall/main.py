@@ -195,6 +195,13 @@ def main():
     db.init_db()
     sound.init_sound()
     sound.play_music()
+
+    try:
+        icon_surface = pygame.image.load(paths.resource_path("assets/icon/window_icon.png"))
+        pygame.display.set_icon(icon_surface)
+    except pygame.error:
+        pass
+
     screen = pygame.display.set_mode((WIDTH, HEIGHT), pygame.SCALED, vsync=1)
     pygame.display.set_caption("Jumping Ball")
     clock = pygame.time.Clock()
